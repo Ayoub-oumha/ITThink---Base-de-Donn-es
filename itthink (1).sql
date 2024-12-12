@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 11 déc. 2024 à 21:25
+-- Généré le : jeu. 12 déc. 2024 à 10:07
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -41,7 +41,9 @@ INSERT INTO `categorie` (`id_categorie`, `nom_categorie`) VALUES
 (2, 'design'),
 (3, 'design'),
 (4, 'design'),
-(5, 'design');
+(5, 'design'),
+(6, 'design'),
+(7, 'design');
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,9 @@ INSERT INTO `freelances` (`id_freelance`, `nom_freelace`, `competence`, `id_util
 (2, 'Mohmed', 'figma , xs ', NULL),
 (3, 'Mohmed', 'figma , xs ', NULL),
 (4, 'Mohmed', 'figma , xs ', NULL),
-(5, 'Mohmed', 'figma , xs ', NULL);
+(5, 'Mohmed', 'figma , xs ', NULL),
+(6, 'Mohmed', 'figma , xs ', NULL),
+(7, 'Mohmed', 'figma , xs ', NULL);
 
 -- --------------------------------------------------------
 
@@ -86,7 +90,8 @@ CREATE TABLE `offres` (
 --
 
 INSERT INTO `offres` (`id_offre`, `montant`, `delai`, `id_freelance`, `id_project`) VALUES
-(1, 125, '0000-00-00', NULL, NULL);
+(1, 125, '0000-00-00', NULL, NULL),
+(2, 125, '0000-00-00', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -102,6 +107,13 @@ CREATE TABLE `projects` (
   `id_sous_categorie` int(11) NOT NULL,
   `id_utilisateur` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `projects`
+--
+
+INSERT INTO `projects` (`id_project`, `titre_project`, `description`, `id_categorie`, `id_sous_categorie`, `id_utilisateur`) VALUES
+(11, 'ecommerce project', 'this is a platform', 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -125,7 +137,10 @@ INSERT INTO `sous_categorie` (`id_sous_categorie`, `nom_sous_categorie`, `id_cat
 (3, 'web design', NULL),
 (4, 'web design', NULL),
 (5, 'web design', NULL),
-(6, 'web design', NULL);
+(6, 'web design', NULL),
+(7, 'web design', NULL),
+(8, 'web design', NULL),
+(9, 'web design', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,7 +164,9 @@ INSERT INTO `temoignage` (`id_temoignage`, `commentaire`, `id_utilisateur`) VALU
 (3, 'this is commentaire in temoignage', NULL),
 (4, 'this is commentaire in temoignage', NULL),
 (5, 'this is commentaire in temoignage', NULL),
-(6, 'this is commentaire in temoignage', NULL);
+(6, 'this is commentaire in temoignage', NULL),
+(7, 'this is commentaire in temoignage', NULL),
+(8, 'this is commentaire in temoignage', NULL);
 
 -- --------------------------------------------------------
 
@@ -235,43 +252,43 @@ ALTER TABLE `utilisateurs`
 -- AUTO_INCREMENT pour la table `categorie`
 --
 ALTER TABLE `categorie`
-  MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `freelances`
 --
 ALTER TABLE `freelances`
-  MODIFY `id_freelance` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_freelance` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `offres`
 --
 ALTER TABLE `offres`
-  MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_offre` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT pour la table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_project` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `sous_categorie`
 --
 ALTER TABLE `sous_categorie`
-  MODIFY `id_sous_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_sous_categorie` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `temoignage`
 --
 ALTER TABLE `temoignage`
-  MODIFY `id_temoignage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_temoignage` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
-  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_utilisateur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Contraintes pour les tables déchargées
